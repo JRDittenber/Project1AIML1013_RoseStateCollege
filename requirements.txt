@@ -19,6 +19,6 @@ boto3
 mypy-boto3-s3
 botocore
 fastapi 
-univcorn
+uvicorn
 jinja2
 python-multipart
