@@ -20,7 +20,7 @@ class MongoDBClient:
     def __init__(self, database_name: str = DATABASE_NAME) -> None:
         try:
             if MongoDBClient.client is None:
-                mongo_db_url = os.getenv("MONGODBURL")
+                mongo_db_url = os.getenv(MONGODBURL)
                 if mongo_db_url is None:
                     raise Exception("MONGODBURL environment variable not set")
                 MongoDBClient.client = pymongo.MongoClient(mongo_db_url)
