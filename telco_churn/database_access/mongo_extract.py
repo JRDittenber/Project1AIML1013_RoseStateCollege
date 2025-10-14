@@ -27,7 +27,7 @@ class TelcoData:
         except Exception as e:
             raise custom_exception(e, sys)
     
-    def extract_data(self, collection_name: str, database_name: Optional[str]) -> pd.DataFrame:
+    def export_collection_as_dataframe(self, collection_name: str, database_name: Optional[str]) -> pd.DataFrame:
         """
         Extract data from MongoDB collection and convert it into a DataFrame.
         
