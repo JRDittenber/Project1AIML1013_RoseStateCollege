@@ -11,9 +11,7 @@ and data drift detection for the Telco Churn pipeline. Responsibilities include:
   using Evidently's Profile + DataDriftProfileSection.
 - Emitting a `DataValidationArtifact` that summarizes validation/drift outcomes and paths to reports.
 
-Notes:
-- This implementation assumes a specific Evidently version consistent with the project's requirements.
-- Names, logic, and import paths are preserved exactly as provided.
+
 """
 
 import json
