@@ -6,7 +6,7 @@ def error_message_detail(error, error_detail: sys):
     file_name = exc_tb.tb_frame.f_code.co_filename
 
     error_message = "Error occured in python script [{0}] at line [{1}]: {2}".format(
-        file_name, exc_tb.tb_linen0, str(error)
+        file_name, exc_tb.tb_lineno, str(error)
     )
 
     return error_message
@@ -18,7 +18,7 @@ class custom_exception(Exception):
         -error_message: the original error or a string description
         - error_detail: usually 'sys', used to extract the traceback info
         """
-        super.__init__(error_message)
+        super().__init__(error_message)
         self.error_message = error_message_detail(error_message, error_detail= error_detail)
 
     def __str__(self):

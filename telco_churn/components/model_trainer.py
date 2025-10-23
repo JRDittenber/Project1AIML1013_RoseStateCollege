@@ -17,12 +17,12 @@ from neuro_mf import ModelFactory
 
 from telco_churn.exceptions import custom_exception
 from telco_churn.logger import logging
-from telco_churn.utils.main_utils import load_numpy_array_data, load_object, save_object
+from telco_churn.utils import load_numpy_array_data, load_object, save_object
 from telco_churn.entity.config_entity import ModelTrainerConfig
 from telco_churn.entity.artifact_entity import (
     DataTransformationArtifact,
     ModelTrainerArtifact,
-    ClassificationMetricArtifact,
+    DataClassificationMetricArtifact,
 )
 from telco_churn.entity.estimator import TelcoModel
 
@@ -74,7 +74,7 @@ class ModelTrainer:
         Tuple[object, object]
             (best_model_detail, metric_artifact), where:
             - best_model_detail: object returned by neuro_mf containing `.best_model` and `.best_score`
-            - metric_artifact: ClassificationMetricArtifact with f1, precision, and recall
+            - metric_artifact: DataClassificationMetricArtifact with f1, precision, and recall
         """
         try:
             logging.info("Using neuro_mf to get best model object and report")
@@ -92,7 +92,7 @@ class ModelTrainer:
             f1 = f1_score(y_test, y_pred, pos_label=1)
             precision = precision_score(y_test, y_pred, pos_label=1)
             recall = recall_score(y_test, y_pred, pos_label=1)
-            metric_artifact = ClassificationMetricArtifact(
+            metric_artifact = DataClassificationMetricArtifact(
                 f1_score=f1, precision_score=precision, recall_score=recall
             )
             
