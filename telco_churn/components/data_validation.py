@@ -25,7 +25,7 @@ from pandas import DataFrame
 
 from telco_churn.exceptions import custom_exception
 from telco_churn.logger import logging
-from telco_churn.utils.main_utils import read_yaml_file, write_yaml_file
+from telco_churn.utils import read_yaml_file, write_yaml_file
 from telco_churn.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact
 from telco_churn.entity.config_entity import DataValidationConfig
 from telco_churn.constants import SCHEMA_FILE_PATH

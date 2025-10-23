@@ -4,7 +4,7 @@ import pandas as pd
 from pandas import DataFrame
 from sklearn.model_selection import train_test_split
 from telco_churn.entity.config_entity import DataIngestionConfig
-from telco_churn.entity.articfact_entity import DataIngetstionArtifact
+from telco_churn.entity.artifact_entity import DataIngestionArtifact
 
 from telco_churn.exceptions import custom_exception
 from telco_churn.logger import logging
@@ -76,7 +76,7 @@ class DataIngestion:
             raise custom_exception(e, sys) from e
         
 
-    def initiate_data_ingestion(self) -> DataIngetstionArtifact:
+    def initiate_data_ingestion(self) -> DataIngestionArtifact:
         """
         Method Name: initiate_data_ingestion
         Description: This method intiates the data ingestion components of training pipeline
@@ -98,7 +98,7 @@ class DataIngestion:
 
             logging.info("Exited initiate_data_ingestion method")
 
-            data_ingestion_artifact = DataIngetstionArtifact(
+            data_ingestion_artifact = DataIngestionArtifact(
                 trained_file_path=self.data_ingestion_config.training_file_path,
                 test_file_path=self.data_ingestion_config.testing_file_path
             )
