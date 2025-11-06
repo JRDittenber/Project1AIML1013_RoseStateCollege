@@ -1,3 +1,7 @@
+# To test, open the terminal and use `python app.py`. Once it is running
+# paste http://127.0.0.1:8080/ into your browser
+
+
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -131,3 +135,4 @@ async def predictRouteClient(request: Request):
 
 if __name__ == "__main__":
     app_run(app, host=APP_HOST, port=APP_PORT)
+
