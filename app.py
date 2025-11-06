@@ -15,7 +15,7 @@ from typing import Optional
 
 from telco_churn.constants import APP_HOST, APP_PORT
 from telco_churn.pipeline.prediction_pipeline import TelcoData, TelcoClassifier
-from telco_churn.pipeline.traning_pipeline import TrainPipeline
+from telco_churn.pipeline.training_pipeline import TrainPipeline
 
 app = FastAPI()
 
